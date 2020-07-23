@@ -1,0 +1,591 @@
+body {
+	background-color: rgb(44, 44, 44);
+}
+
+/* blue: rgb(0, 247, 255) */
+/* purple: rgb(174, 0, 255) */
+
+.App {
+	display: flex;
+	flex-direction: column;
+}
+
+.font {
+	font-family: "Blinker", sans-serif;
+}
+
+.splashScreenContainer {
+	width: 100vw;
+	height: 81vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.splashScreenTitle {
+	position: absolute;
+	width: 20vw;
+	margin-top: -5vh;
+	animation: grow 7s infinite ease-in-out;
+}
+
+@keyframes grow {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.3);
+	}
+	100% {
+		transform: skew(1);
+	}
+}
+
+.splashScreenBackground {
+	width: 30vw;
+	height: 30vw;
+	margin: -10vh 10px 0px 10px;
+	position: relative;
+	z-index: -1;
+	animation: spin 14s infinite ease-in-out forwards;
+}
+
+#middleReel {
+	width: 35vw;
+	height: 35vw;
+}
+
+@keyframes spin {
+	0% {
+		transform: rotate(0deg);
+	}
+	50% {
+		transform: rotate(1800deg);
+	}
+}
+
+.pageHeader {
+	width: 100vw;
+	height: 19vh;
+	display: flex;
+	flex-direction: column;
+	background-color: rgb(44, 44, 44);
+	min-height: fit-content;
+}
+
+.pageHeadertext {
+	font-family: "Shrikhand", cursive;
+	letter-spacing: 2px;
+	font-size: 250%;
+	color: rgb(255, 255, 255);
+	margin-left: 20px;
+	min-height: 30px;
+	height: 4vh;
+	width: 350px;
+}
+
+.pageHeadertext:hover {
+	cursor: pointer;
+	animation: popText 300ms forwards ease-in-out;
+}
+
+@keyframes popText {
+	from {
+	}
+	to {
+		text-shadow: 3px 3px rgb(174, 0, 255);
+		transform: translateX(-3px);
+		transform: translateY(-3px);
+	}
+}
+
+.commandBarContainer {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	border-top: 1px solid rgb(174, 0, 255);
+	border-bottom: 1px solid rgb(174, 0, 255);
+	height: 8vh;
+	min-height: 70px;
+}
+
+.commandButtonsContainer {
+	width: 50%;
+	height: 100%;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	margin-left: 50px;
+}
+
+.commandButtons {
+	font-size: 150%;
+	margin-right: 30px;
+	background: none;
+	color: rgb(255, 255, 255);
+	border: 1px solid rgb(174, 0, 255);
+	border-radius: 5px;
+	outline: none;
+	white-space: nowrap;
+}
+
+.commandButtonSelected {
+	background-color: rgb(174, 0, 255);
+	border: 1px solid rgb(255, 255, 255);
+}
+
+.commandButtons:hover {
+	cursor: pointer;
+	animation: pop 300ms forwards ease-in-out;
+}
+
+@keyframes pop {
+	from {
+	}
+	to {
+		box-shadow: 3px 3px rgb(174, 0, 255);
+		transform: translateX(-3px);
+		transform: translateY(-3px);
+	}
+}
+
+.searchBarContainer {
+	width: 50%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.searchBar {
+	width: 80%;
+	height: 35%;
+	font-size: 150%;
+	margin: 10px;
+}
+
+.searchButton {
+	color: white;
+	font-size: 150%;
+	outline: none;
+	background: none;
+	border: 1px solid white;
+	border-radius: 5px;
+}
+
+.searchButton:hover {
+	cursor: pointer;
+	border: 1px solid rgb(174, 0, 255);
+	border-radius: 5px;
+}
+
+.pageContent {
+	width: 100vw;
+	height: 81vh;
+	overflow: scroll;
+}
+
+.listContainer {
+	background-color: rgb(44, 44, 44);
+}
+
+.listItem {
+	height: 15vh;
+	width: 100vw;
+	padding: 10px 0px 10px 0px;
+	border-bottom: 2px solid grey;
+	overflow: hidden;
+}
+
+.listItem:hover {
+	background-color: rgb(53, 53, 53);
+	cursor: pointer;
+}
+
+.searchResultItemContainer {
+	height: 15vh;
+	display: flex;
+	align-items: center;
+}
+
+.searchResultItemPoster {
+	height: 15vh;
+	width: 10vh;
+	margin-left: 10px;
+	border-radius: 3px;
+}
+
+.searchResultItemDetails {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.searchResultItemDetailsText {
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	margin: 0px 0px 0px 20px;
+}
+
+.searchResultItemTitle {
+	color: white;
+	font-size: 200%;
+	margin: 10px 0px 10px 0px;
+}
+
+.searchResultItemYear {
+	color: rgb(110, 110, 110);
+	font-size: 150%;
+}
+
+.interactiveIcons {
+	display: flex;
+}
+
+.listIcons {
+	color: rgb(110, 110, 110);
+	margin-right: 20px;
+}
+
+.listIcons:hover {
+	color: rgb(174, 0, 255);
+	cursor: pointer;
+}
+
+.selectedIcon {
+	color: rgb(174, 0, 255);
+	margin-right: 20px;
+}
+
+.selectedIcon:hover {
+	cursor: pointer;
+}
+
+.noSearchResults {
+	font-size: 250%;
+	color: rgb(105, 105, 105);
+	border-bottom: 2px solid rgb(105, 105, 105);
+	margin: 20px 20px 0px 20px;
+	display: flex;
+	justify-content: center;
+}
+
+/*-----------------------------------------------------------------------------------------------Details Page UI----------------------*/
+
+.detailsPageContainer {
+	width: 100vw;
+	display: flex;
+	flex-direction: column;
+}
+
+.detailsPageHeader {
+	width: calc(100vw - 20px);
+	margin: 10px;
+	height: 15%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-bottom: white 2px solid;
+}
+
+.detailsPageBackButtonAndTitle {
+	display: flex;
+}
+
+.detailsPagebackButtonContainer {
+	margin-right: 10px;
+	width: 2vw;
+}
+
+.arrowIcon {
+	margin-left: 5px;
+	font-size: 250%;
+	color: rgb(255, 255, 255);
+}
+
+.arrowIcon:hover {
+	cursor: pointer;
+}
+
+.detailsPageTitle {
+	color: white;
+	font-size: 500%;
+}
+
+.detailsPageInteractiveContainer {
+	min-width: 420px;
+	height: 50px;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+.detailsPageRatingContainer {
+	display: flex;
+	margin-left: 20px;
+	margin-right: 50px;
+	overflow: hidden;
+	word-wrap: none;
+}
+
+.diamond {
+	color: rgb(110, 110, 110);
+	padding-right: 5px;
+	cursor: pointer;
+}
+
+.diamondSelected {
+	color: rgb(174, 0, 255);
+}
+
+.diamond:hover {
+	color: rgb(174, 0, 255);
+}
+
+.diamondHover {
+	color: rgb(174, 0, 255);
+}
+
+.diamond:hover ~ .diamond:before {
+	color: rgb(110, 110, 110);
+}
+
+.detailsPageBody {
+	width: 100vw;
+	height: 85%;
+	display: flex;
+}
+
+.detailsPagePosterAndDetailsContainer {
+	margin: 20px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 20vw;
+}
+
+.detailsPageYearRatingRuntimeContainer {
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	overflow: hidden;
+}
+
+.detailsPageYearText {
+	font-size: 150%;
+	color: white;
+	white-space: nowrap;
+	display: flex;
+	align-items: center;
+}
+
+.detailsPageSlashes {
+	margin: 0px 7px 0px 7px;
+	color: rgb(104, 104, 104);
+	font-size: 200%;
+}
+
+.detailsPagePoster {
+	margin: 10px;
+	width: 18vw;
+	height: 27vw;
+	border-radius: 5px;
+}
+
+.detailsPageSummaryAndPeopleContainer {
+	margin: 20px 20px 0px 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.detailsPageSummaryContainer {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 30px;
+}
+
+.detailsPageSummaryTitleText {
+	color: white;
+	font-size: 250%;
+	margin-bottom: 15px;
+}
+
+.detailsPageSummaryText {
+	color: white;
+	font-size: 150%;
+}
+
+.detailsPagePeopleAndReviewsContainer {
+	display: flex;
+	margin-bottom: 20px;
+}
+
+.detailsPagePeopleContainer {
+	width: 65%;
+	margin-right: 15px;
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background-color: rgb(61, 61, 61);
+	border-radius: 5px;
+}
+
+.detailsPagePeopleText {
+	color: white;
+	font-size: 150%;
+	margin: 5px;
+}
+
+.detailsPageReviewsContainer {
+	width: 35%;
+	padding: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	background-color: rgb(61, 61, 61);
+	border-radius: 5px;
+}
+
+.detailsPageReviewText {
+	color: white;
+	font-size: 200%;
+	margin: 5px;
+}
+
+/*-----------------------------------------------------------------------------------------------Grid UI----------------------*/
+
+.gridUIContainer {
+	width: 100vw;
+	height: 81vh;
+}
+
+.gridTaskbar {
+	width: 100vw - 40px;
+	min-height: 50px;
+	height: 5vh;
+	margin: 0px 20px 10px 20px;
+	border-bottom: 2px solid rgb(110, 110, 110);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	overflow: scroll;
+}
+
+.filmCount {
+	margin-left: 20px;
+	margin-right: 20px;
+	color: white;
+	font-size: 200%;
+	white-space: nowrap;
+}
+
+.sortByContainer {
+	display: flex;
+	align-items: center;
+}
+
+.sortByText {
+	color: white;
+	font-size: 150%;
+	margin-right: 20px;
+	white-space: nowrap;
+}
+
+.sortMethod {
+	font-size: 130%;
+	color: white;
+	background: transparent;
+	outline: none;
+	border: 1px solid rgb(174, 0, 255);
+	border-radius: 3px;
+	margin-right: 10px;
+	white-space: nowrap;
+}
+
+.sortMethod:hover {
+	border: 1px solid white;
+	color: white;
+	background-color: rgb(174, 0, 255);
+	cursor: pointer;
+}
+
+.sortMethodSelected {
+	font-size: 130%;
+	border: 1px solid white;
+	color: white;
+	background-color: rgb(174, 0, 255);
+	border-radius: 3px;
+	margin-right: 10px;
+	white-space: nowrap;
+}
+
+.gridAllFilmsContainer {
+	display: flex;
+	max-width: 100vw;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: 0px 10px 0px 10px;
+}
+
+.gridFilmContainer {
+	margin: 10px 0px 10px 0px;
+	min-width: 135px;
+	max-width: 135px;
+	max-height: 210px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.gridFilmContainer:hover {
+	cursor: pointer;
+	animation: filmGrow 500ms ease forwards;
+}
+
+@keyframes filmGrow {
+	from {
+	}
+	to {
+		transform: scale(1.1);
+	}
+}
+
+.gridPosterContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 120px;
+	height: 180px;
+}
+
+.gridPoster {
+	width: 120px;
+	height: 180px;
+	border-radius: 5px;
+}
+
+.diamondGridDisplay {
+	color: rgb(174, 0, 255);
+	margin-left: 3px;
+	margin-top: 5px;
+}
+
+.hideRating {
+	display: none;
+}
+
+.gridNoPosterTitle {
+	color: white;
+	width: 100px;
+	height: 180px;
+	margin-top: -180px;
+	font-size: 150%;
+	overflow: scroll;
+	word-wrap: break-word;
+}
